@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.EditorUtilities;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -110,6 +111,8 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         MovePlayer();
+        
+
         playerVelocity = Mathf.RoundToInt(Vector3.Magnitude(rb.velocity));
     }
 
@@ -211,9 +214,10 @@ public class PlayerMovement : MonoBehaviour
         //on ground
         else if (grounded)
         {
-
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
         }
+
+
         //in air
         else if (!grounded)
         {

@@ -10,11 +10,11 @@ public class DebugSettings : MonoBehaviour
     public bool enableDebug;
 
     public GameObject DebugPanel;
-    public PlayerMovement playerMovementStats;
+    public PlayerMovement playerMovementScript;
 
     private void Start()
     {
-        DebugPanel.SetActive(false);
+        //DebugPanel.SetActive(false);
     }
 
     private void Update()
@@ -39,8 +39,9 @@ public class DebugSettings : MonoBehaviour
 
         if (enableDebug) 
         { 
-            Debug.Log("Move Speed:" + playerMovementStats.playerVelocity);
-            Debug.Log("State:" + playerMovementStats.state);
+            Debug.Log("Move Speed:" + playerMovementScript.playerVelocity);
+            Debug.Log("State:" + playerMovementScript.state);
+  
         }
     }
 }
